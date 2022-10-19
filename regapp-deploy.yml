@@ -21,7 +21,7 @@ spec:
         image: rohit5521/mvnprojectweb
         imagePullPolicy: Always
         ports:
-        - containerPort: 8088
+        - containerPort: 8080
   strategy:
     type: RollingUpdate
     rollingUpdate:
