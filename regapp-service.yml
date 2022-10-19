@@ -6,10 +6,10 @@ metadata:
     app: time-stamp4
 spec:
   selector:
-    app: regapp 
+    app: time-stamp4
 
   ports:
     - port: 8080
       targetPort: 8088
 
-  type: NodePort
+  type: ClusterIP
