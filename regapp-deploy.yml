@@ -1,27 +1,27 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: valaxy-regapp
+  name: time-stamp4
   labels: 
-     app: regapp
+     app: time-stamp4
 
 spec:
-  replicas: 2 
+  replicas: 3
   selector:
     matchLabels:
-      app: regapp
+      app: time-stamp4
 
   template:
     metadata:
       labels:
-        app: regapp
+        app: time-stamp4
     spec:
       containers:
-      - name: regapp
-        image: valaxy/regapp
+      - name: rohit-container
+        image: rohit5521/mvnprojectweb
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8083
   strategy:
     type: RollingUpdate
     rollingUpdate:
