@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Stop Container
+      command: docker stop simple-devops-container
+      ignore_errors: yes
+
+    - name: Remove Container
+      command: docker rm simple-devops-container
+      ignore_errors: yes
+
+    - name: Remove Unwanted Images
+      command: docker rmi simple-devops-image
+
+
+    - name: build docker image using war file
+      command: docker build -t simple-devops-image .
+      args:
+        chdir: /opt/docker
+
+    - name: create container using simple devops image
+      command: docker run -d --name simple-devops-container -p 8080:8080 simple-devops-image
