@@ -2,5 +2,5 @@ FROM tomcat:latest
 
 MAINTAINER ROHIT SHINDE 
 
-COPY ./*.war /usr/local/tomcat/webapps
+COPY /var/lib/jenkins/workspace/rs/webapp/target/webapp.war /usr/local/tomcat/webapps
 
