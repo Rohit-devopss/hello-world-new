@@ -2,5 +2,7 @@ FROM tomcat:latest
 
 MAINTAINER ROHIT SHINDE 
 
-COPY /var/lib/jenkins/workspace/rs/webapp/target/webapp.war /usr/local/tomcat/webapps
+WORKDIR /opt/docker
+
+COPY /opt/docker/webapp.war /usr/local/tomcat/webapps
 
