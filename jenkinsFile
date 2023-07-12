@@ -30,6 +30,13 @@ pipeline {
       }
     }
     stage('Build and Push Docker Image') {
+      steps {
+        sh 'cp -R /var/lib/jenkins/workspace/pro/webapp/target/webapp.war /opt/docker'
+        
+      }
+    }
+      
+    stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "rohit5521/trail:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "Dockerfile"
