@@ -29,7 +29,7 @@ pipeline {
         }
       }
     }
-    stage('Build and Push Docker Image') {
+    stage('Copy file') {
       steps {
         sh 'cp -R /var/lib/jenkins/workspace/pro/webapp/target/webapp.war /opt/docker'
         
